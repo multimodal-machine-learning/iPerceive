@@ -21,7 +21,7 @@ To load,
 
 The figure below outlines the goals of iPerceive DVC: (i) temporally localize a set of events in a video, (ii) build a knowledge base for common-sense reasoning and, (iii) produce a textual description using audio, visual and speech cues for each event. To this end, we apply a three-stage approach.
 
-![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceive/iPerceiveDVC/images/archDVC.jpg)
+![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveDVC/images/archDVC.jpg)
 <p align="center">Figure 1. Architectural overview of iPerceive DVC. iPerceive DVC generates common-sense vectors from the temporal events that the proposal module localizes (left). Features from all modalities are sent to the corresponding encoder-decoder Transformers (middle). Upon fusing the processed features we finally output the next word in the caption using the distribution over the vocabulary (right).</p>
 
 ### Common-Sense Reasoning Module
@@ -84,13 +84,13 @@ As we mentioned in the paper, we didn't have access to the full dataset as [Acti
 
 ## Results
 
-![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceive/iPerceiveDVC/images/dvc_res.jpg)
+![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveDVC/images/dvc_res.jpg)
 <p align="center">Tab. 1 shows a comparison of the baseline implementation of iPerceive DVC with the state-of-the-art. Algorithms were split into the ones which "saw" all training videos and others which trained on partially available data (since some YouTube videos which were part of the ActivityNet Captions dataset are no longer available). The results show that our model outperforms the state-of-the-art in most cases.
 
-![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceive/iPerceiveDVC/images/DVCsample.jpg)
+![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveDVC/images/DVCsample.jpg)
 <p align="center">Fig. 2 Qualitative sampling of iPerceive DVC. Captioning results for a sample video from the ActivityNet Captions validation set show better performance owing to common-sense reasoning and end-to-end training.</p>
 
-![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceive/iPerceiveDVC/images/dvc_ab.jpg)
+![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveDVC/images/dvc_ab.jpg)
 <p align="center">Tab. 2 shows results from ablation studies for common-sense reasoning and end-to-end training to assess the impact of these design decisions on the performance of iPerceive DVC.</p>
 
 ## Misc.
