@@ -5,6 +5,8 @@ This is the official PyTorch implementation of our paper.
 
 ```Python3 | PyTorch | CNNs | Causality | Reasoning```
 
+Explore: ** [iPerceive Dense Video Captioning](https://github.com/amanchadha/iPerceive/tree/master/iPerceiveDVC) | [iPerceive VideoQA](https://github.com/amanchadha/iPerceive/tree/master/iPerceiveVideoQA) **
+
 ## Overview
 
 <p align=center><img src="https://github.com/amanchadha/iPerceive/blob/master/images/DVCCS1.jpg" width=433 height=625/></p>
@@ -54,8 +56,9 @@ We offer a pre-trained [model](https://drive.google.com/drive/folders/1y44pwGVVz
 
 #### Prepare Training Data
 
-Step 0: First, you need to download the COCO dataset and annotations into `/path_to_COCO_dataset/`
-Step 1: Modify the path in `iPerceive/config/paths_catalog.py`, containing the `DATA_DIR` and `DATASETS` path.
+- Step 0: First, you need to download the COCO dataset and annotations into `/path_to_COCO_dataset/`
+
+- Step 1: Modify the path in `iPerceive/config/paths_catalog.py`, containing the `DATA_DIR` and `DATASETS` path.
 
 #### Training Parameters
 
