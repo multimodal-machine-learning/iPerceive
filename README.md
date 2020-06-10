@@ -91,7 +91,7 @@ python -m torch.distributed.launch --nproc_per_node=$NGPUS tools/train_net.py --
 
 - The `MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN` denotes that the proposals are selected for per the batch rather than per image in the default training. The value is calculated by **1000 x images-per-gpu**. Here we have 2 images per GPU, therefore we set the number as 1000 x 2 = 2000. If we have 8 images per GPU, the value should be set as 8000. See [#672@maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark/issues/672) for more details.
 
-- Please note that the learning rate & iteration change rule follows the [scheduling rules from Detectron](https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14-L30), which means the lr need to be set 2x if the number of GPUs become 2x. In our methods, the learning rate is set for 4 GPUs and each GPU has 2 images.
+- Please note that the learning rate and iteration change rule follows the [scheduling rules from Detectron](https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14-L30), which means the LR needs to be set 2x if the number of GPUs become 2x. In our implementation, the learning rate is set for 4 GPUs and each GPU has 2 images.
 - In my practice, the learning rate can not be best customized since the iPerceive training is not a supervised model and you cannot measure the goodness of the iPerceive model from training procedure. We have provide a general suitable learning rate and you can make some slight modification. 
 - You can turn on the **TensorBoard** logger by add `--use-tensorboard` into command (Need to install tensorflow and tensorboardx first).
 - The confounder dictionary `dic_coco.npy` and the prior `stat_prob.npy` are located inside [tools](tools).
@@ -113,8 +113,8 @@ Please note that before running, you need to set the suitable path for `BOUNDING
 **2. Using our pre-trained iPerceive model on COCO**
 
 - You can use our pre-trained iPerceive [model](https://drive.google.com/drive/folders/1y44pwGVVzRTr11tDKGnNEabOrif01QX4?usp=sharing). 
-- You can put it into the model dictionary and set the `last_checkpoint` with the absolute path of `model_final.pth`. 
-- The following script is a push-button mechanism to use iPerceive for feature extraction with a trained model:
+- Move it into the model dictionary and set the `last_checkpoint` with the absolute path of `model_final.pth`. 
+- The following script is a push-button mechanism to use iPerceive for feature extraction with a trained model (without any need for bounding-box data):
 
 ```bash
 run.sh
@@ -178,6 +178,16 @@ Recall that with the trained iPerceive, we can directly extract iPerceive Featur
 You don't need to! We take care of that for you. Details from the paper below:
 **Note that since the architecture proposed in [Wang et al.](https://arxiv.org/abs/2002.12204) essentially serves as an improved visual region encoder given a region of interest (RoI) in an image, it assumes that an RoI exists and is available at test time, which reduces its effectiveness and limits its usability with new datasets that the model has never seen before. 
 We adapt their work by utilizing a pre-trained Mask R-CNN model to generate bounding boxes for RoIs for frames within each event that have been localized by the event proposal module, before feeding it to the common-sense module.**
+
+The following script is a push-button mechanism to use iPerceive for feature extraction with a trained model (without any need for bounding-box data):
+
+```bash
+run.sh
+```
+
+### I've heard that tasks involving video need serious compute horse-power and time. Is common-sense generation for videos computationally expensive?###
+
+Yes, it is. To make the task of common-sense feature generation for videos tractable, we only generate common-sense features for a frame when we detect a change in the environmental "setting" going from one frame to the next in a particular localized event. Specifically, we check for changes in the set of object labels in a scene and only generate common-sense features if a change is detected; if not, we re-use the common-sense features from the last frame.
 
 ## Results
 
