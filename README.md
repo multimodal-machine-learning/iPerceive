@@ -7,7 +7,7 @@ This is the official PyTorch implementation of our paper.
 
 ## Overview
 
-![iPerceiveDVC](https://github.com/amanchadha/iPerceive/blob/master/iPerceive/images/DVCCS1.jpg)
+![iPerceiveDVC](https://github.com/amanchadha/iPerceive/blob/master/images/DVCCS1.jpg)
 <p align="center">Figure 1. Top: An example of a cognitive error in DVC. While the girl tries to block the boy's dunking attempt, him *jumping* (event X) eventually *leads* to him dunking the basketball through the hoop (event Y). Bottom: An example of an incorrect attended region where conventional DVC approaches correlate a chef and steak to the activity of cooking without even attending to the nearby oven. We used [Iashin et al.](https://arxiv.org/abs/2003.07758) as our DVC baseline as it is the current state-of-the-art.</p>
 
  Most of the previous works in visual understanding, rely solely on understanding the "what" (e.g., object recognition) and "where" (e.g., event localization), which in some cases, fails to describe correct contextual relationships between events or leads to incorrect underlying visual attention. Part of what defines us as human and fundamentally different from machines is our instinct to seek causality behind any association, say an event Y that happened as a direct result of event X. To this end, we propose iPerceive, a framework capable of understanding the "why" between events in a video by building a common-sense knowledge base using contextual cues. We demonstrate the effectiveness of our technique to the dense video captioning (DVC) and video question answering (VideoQA) tasks. Furthermore, while most prior art in DVC and VideoQA relies solely on visual information, other modalities such as audio and speech are vital for a human observer's perception of an environment. We formulate DVC and VideoQA tasks as machine translation problems that utilize multiple modalities. 
@@ -16,10 +16,10 @@ This is the official PyTorch implementation of our paper.
 
 The figure below outlines the goals of iPerceive VideoQA: (i) build a knowledge base for common-sense reasoning, (ii) supplement features extracted from input modalities: video and text (in the form of dense captions, subtitles and QA) and, (iii) implement the relevant-frames selection problem as a multi-label classification task. As such, we apply a two-stage approach.
 
-![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/iPerceive/images/archDVC.jpg)
+![iPerceiveDVCArch](https://github.com/amanchadha/iPerceive/blob/master/images/archDVC.jpg)
 <p align="center">Figure 2. Architectural overview of iPerceive DVC. iPerceive DVC generates common-sense vectors from the temporal events that the proposal module localizes (left). Features from all modalities are sent to the corresponding encoder-decoder Transformers (middle). Upon fusing the processed features we finally output the next word in the caption using the distribution over the vocabulary (right).</p>
 
-![iPerceiveDVC](https://github.com/amanchadha/iPerceive/blob/master/iPerceive/images/archVidQA.jpg)
+![iPerceiveDVC](https://github.com/amanchadha/iPerceive/blob/master/images/archVidQA.jpg)
 <p align="center">Figure 3. Architectural overview of iPerceive VideoQA. Our model consists of two main components: feature fusion and frame selection. For feature fusion, we encode features using a convolutional encoder, generate common-sense vectors from the input video sequence, and use iPerceive DVC for dense captions (left). Features from all modalities (video, dense captions, QA and subtitles) are then fed to dual-layer attention: word/object and frame-level (middle). Upon fusing the attended features, we calculate frame-relevance scores (right).</p>
 
 ## Citation
@@ -181,7 +181,7 @@ We adapt their work by utilizing a pre-trained Mask R-CNN model to generate boun
 
 ## Results
 
-![results2](https://github.com/amanchadha/iPerceive/blob/master/iPerceive/images/DVCsample.jpg)
+![results2](https://github.com/amanchadha/iPerceive/blob/master/images/DVCsample.jpg)
 <p align="center">Figure 4. Qualitative sampling of iPerceive DVC. Captioning results for a sample video from the ActivityNet Captions validation set showbetter performance owing to common-sense reasoning and end-to-end training.</p>
 
 ## Acknowledgements
