@@ -75,7 +75,7 @@ Example:
 python tools/train_net.py --config-file "configs/e2e_mask_rcnn_R_101_FPN_1x.yaml" SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025 SOLVER.MAX_ITER 720000 SOLVER.STEPS "(480000, 640000)" TEST.IMS_PER_BATCH 1 MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN 2000
 ```
 
-P.S.: To running more images on one GPU, you can refer the [Mask R-CNN](https://github.com/facebookresearch/maskrcnn-benchmark/) repository.
+P.S.: To running more images on one GPU, please refer the [Mask R-CNN](https://github.com/facebookresearch/maskrcnn-benchmark/) repository.
  
 **2. Multi-GPU Training:**
 
