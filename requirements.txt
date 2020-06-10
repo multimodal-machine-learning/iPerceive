@@ -1,0 +1,8 @@
+ninja
+yacs
+cython
+matplotlib
+tqdm
+opencv-python
+h5py
+lmdb
