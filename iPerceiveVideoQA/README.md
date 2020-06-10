@@ -23,7 +23,7 @@ Building upon the architecture proposed by [Kim et al.](http://arxiv.org/abs/200
 
 The figure below outlines the goals of iPerceive VideoQA: (i) build a knowledge base for common-sense reasoning, (ii) supplement features extracted from input modalities: video and text (in the form of dense captions, subtitles and QA) and, (iii) implement the relevant-frames selection problem as a multi-label classification task. As such, we apply a two-stage approach.
 
-![iPerceiveVidQA_Poster](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVidQA/images/archVidQA.jpg)
+![iPerceiveVidQA_Poster](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVideoQA/images/archVidQA.jpg)
 <p align="center">Figure 1: Network architecture</p>
 
 ### Common-Sense Reasoning Module
@@ -91,10 +91,10 @@ For words that we do not have an embedding for, random vectors ```np.random.rand
 
 ## Results
 
-![results1](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVidQA/images/results.jpg)
+![results1](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVideoQA/images/results.jpg)
 <p align="center">Table 1. A comparison of iPerceive VideoQA with the state-of-the-art.</p>
 
-![results2]((https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVidQA/images/abl.jpg)
+![results2]((https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVideoQA/images/abl.jpg)
 <p align="center">Table 2. Results from ablation studies for iPerceive DVC and common-sense reasoning to assess their impact on the performance of iPerceive VideoQA.</p>
 
 ## Pre-trained Model
