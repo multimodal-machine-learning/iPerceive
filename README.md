@@ -95,7 +95,7 @@ python -m torch.distributed.launch --nproc_per_node=$NGPUS tools/train_net.py --
 - The `MODEL.RPN.FPN_POST_NMS_TOP_N_TRAIN` denotes that the proposals are selected for per the batch rather than per image in the default training. The value is calculated by **1000 x images-per-gpu**. Here we have 2 images per GPU, therefore we set the number as 1000 x 2 = 2000. If we have 8 images per GPU, the value should be set as 8000. See [#672@maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark/issues/672) for more details.
 
 - Please note that the learning rate and iteration change rule follows the [scheduling rules from Detectron](https://github.com/facebookresearch/Detectron/blob/master/configs/getting_started/tutorial_1gpu_e2e_faster_rcnn_R-50-FPN.yaml#L14-L30), which means the LR needs to be set 2x if the number of GPUs become 2x. In our implementation, the learning rate is set for 4 GPUs and each GPU has 2 images.
-- In my practice, the learning rate can not be best customized since the iPerceive training is not a supervised model and you cannot measure the goodness of the iPerceive model from training procedure. We have provide a general suitable learning rate and you can make some slight modification. 
+- In our observations, "optimizing" the learning rate is a challenging task since iPerceive training is self-supervised model and you cannot measure the goodness of the iPerceive model from training procedure by observing a particular metric. We have provided a generally suitable learning rate and leave it to the end user to tune it to their application.
 - You can turn on the **TensorBoard** logger by add `--use-tensorboard` into command (Need to install tensorflow and tensorboardx first).
 - The confounder dictionary `dic_coco.npy` and the prior `stat_prob.npy` are located inside [tools](tools).
 
@@ -117,7 +117,7 @@ Please note that before running, you need to set the suitable path for `BOUNDING
 
 - You can use our pre-trained iPerceive [model](https://drive.google.com/drive/folders/1y44pwGVVzRTr11tDKGnNEabOrif01QX4?usp=sharing). 
 - Move it into the model dictionary and set the `last_checkpoint` with the absolute path of `model_final.pth`. 
-- The following script is a push-button mechanism to use iPerceive for feature extraction with a trained model (without any need for bounding-box data):
+- The following script is a push-button mechanism to use iPerceive for feature extraction with a pre-trained model (without any need for bounding-box data):
 
 ```bash
 run.sh
@@ -174,7 +174,7 @@ Next, you need to modify the following files:
 
 **2. Extracting features of customized dataset**
 
-Recall that with the trained iPerceive, we can directly extract iPerceive Features given raw images and bounding box coordinates. Therefore, the method to design dataloader is similar to the above. The only difference is you may want to load box coordinates file for feature extraction and the labels, classes is unnecessary.
+Recall that with the pre-trained model, we can directly extract common-sense features given raw images and bounding box coordinates. Therefore, the method to design a dataloader for your custom dataset to whats indicated above. The only difference is you may want to load bounding-box coordinates from a file for feature extraction and the labels/classes are unnecessary (however, if you do not have ground truth bounding-box coordinates coordinates, don't despair - read on below).
 
 ### Do I need to specify bounding boxes for my dataset?
 
@@ -182,7 +182,7 @@ You don't need to! We take care of that for you. Details from the paper below:
 **Note that since the architecture proposed in [Wang et al.](https://arxiv.org/abs/2002.12204) essentially serves as an improved visual region encoder given a region of interest (RoI) in an image, it assumes that an RoI exists and is available at test time, which reduces its effectiveness and limits its usability with new datasets that the model has never seen before. 
 We adapt their work by utilizing a pre-trained Mask R-CNN model to generate bounding boxes for RoIs for frames within each event that have been localized by the event proposal module, before feeding it to the common-sense module.**
 
-The following script is a push-button mechanism to use iPerceive for feature extraction with a trained model (without any need for bounding-box data):
+The following script is a push-button mechanism to use iPerceive for feature extraction with a pre-trained model (without any need for bounding-box data):
 
 ```bash
 run.sh
