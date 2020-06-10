@@ -185,9 +185,9 @@ The following script is a push-button mechanism to use iPerceive for feature ext
 run.sh
 ```
 
-### I've heard that tasks involving video need serious compute horse-power and time. Is common-sense generation for videos computationally expensive?###
+### I've heard that tasks involving video need serious compute horse-power and time. Is common-sense generation for videos computationally expensive?
 
-Yes, it is. To make the task of common-sense feature generation for videos tractable, we only generate common-sense features for a frame when we detect a change in the environmental "setting" going from one frame to the next in a particular localized event. Specifically, we check for changes in the set of object labels in a scene and only generate common-sense features if a change is detected; if not, we re-use the common-sense features from the last frame.
+Yes, it is. However, to make the task of common-sense feature generation for videos tractable, we only generate common-sense features for a frame when we detect a change in the environmental "setting" going from one frame to the next in a particular localized event. Specifically, we check for changes in the set of object labels in a scene and only generate common-sense features if a change is detected; if not, we re-use the common-sense features from the last frame.
 
 ## Results
 
