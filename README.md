@@ -5,7 +5,7 @@ This is the official PyTorch implementation of our paper.
 
 ```Python3 | PyTorch | CNNs | Causality | Reasoning```
 
-Explore: ** [iPerceive Dense Video Captioning](https://github.com/amanchadha/iPerceive/tree/master/iPerceiveDVC) | [iPerceive VideoQA](https://github.com/amanchadha/iPerceive/tree/master/iPerceiveVideoQA) **
+**Explore: [iPerceive Dense Video Captioning](https://github.com/amanchadha/iPerceive/tree/master/iPerceiveDVC) | [iPerceive VideoQA](https://github.com/amanchadha/iPerceive/tree/master/iPerceiveVideoQA)**
 
 ## Overview
 
