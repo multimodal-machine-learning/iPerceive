@@ -8,7 +8,7 @@ This is the official PyTorch implementation of our paper.
 ## Overview
 
 ![iPerceiveDVC](https://github.com/amanchadha/iPerceive/blob/master/images/DVCCS1.jpg)
-<p align="center">Figure 1. Top: An example of a cognitive error in DVC. While the girl tries to block the boy's dunking attempt, him *jumping* (event X) eventually *leads* to him dunking the basketball through the hoop (event Y). Bottom: An example of an incorrect attended region where conventional DVC approaches correlate a chef and steak to the activity of cooking without even attending to the nearby oven. We used [Iashin et al.](https://arxiv.org/abs/2003.07758) as our DVC baseline as it is the current state-of-the-art.</p>
+<p align="center">Figure 1. Top: An example of a cognitive error in DVC. While the girl tries to block the boy's dunking attempt, him *jumping* (event X) eventually *leads* to him dunking the basketball through the hoop (event Y). Bottom: An example of an incorrect attended region where conventional DVC approaches correlate a chef and steak to the activity of cooking without even attending to the nearby oven. We used <a href="https://arxiv.org/abs/2003.07758">Iashin et al.</a> as our DVC baseline as it is the current state-of-the-art.</p>
 
  Most of the previous works in visual understanding, rely solely on understanding the "what" (e.g., object recognition) and "where" (e.g., event localization), which in some cases, fails to describe correct contextual relationships between events or leads to incorrect underlying visual attention. Part of what defines us as human and fundamentally different from machines is our instinct to seek causality behind any association, say an event Y that happened as a direct result of event X. To this end, we propose iPerceive, a framework capable of understanding the "why" between events in a video by building a common-sense knowledge base using contextual cues. We demonstrate the effectiveness of our technique to the dense video captioning (DVC) and video question answering (VideoQA) tasks. Furthermore, while most prior art in DVC and VideoQA relies solely on visual information, other modalities such as audio and speech are vital for a human observer's perception of an environment. We formulate DVC and VideoQA tasks as machine translation problems that utilize multiple modalities. 
  Another common drawback of current methods is that they train the event proposal and captioning model either separately or in alternation, which prevents direct influence of the proposal based on the caption. To address this, we adopt an end-to-end Transformer architecture. % Using ablation studies, we demonstrate a considerable contribution from audio and speech components suggesting that these modalities contain substantial complementary information to video frames.  
@@ -48,7 +48,7 @@ To load just the Python packages,
 
 ### Pre-trained model
 
-We offer a pre-trained [model](https://drive.google.com/drive/folders/1y44pwGVVzRTr11tDKGnNEabOrif01QX4?usp=sharing) using the [http://cocodataset.org](COCO dataset). Details below.
+We offer a pre-trained [model](https://drive.google.com/drive/folders/1y44pwGVVzRTr11tDKGnNEabOrif01QX4?usp=sharing) using the [COCO dataset](http://cocodataset.org). Details below.
  
 ### Training on the COCO Dataset
 
@@ -187,5 +187,5 @@ We adapt their work by utilizing a pre-trained Mask R-CNN model to generate boun
 ## Acknowledgements
 
 Credits:
-- [Baseline implementation](https://github.com/Wangt-CN/VC-R-CNN) by Tan Wang.
+- [Baseline common-sense reasoning implementation for images](https://github.com/Wangt-CN/VC-R-CNN) by Tan Wang.
 - The [Mask R-CNN](https://github.com/facebookresearch/maskrcnn-benchmark/) repository helped us workaround past a lot of the issues we faced with the VC R-CNN codebase.
