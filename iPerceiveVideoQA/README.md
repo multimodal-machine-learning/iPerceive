@@ -94,7 +94,7 @@ For words that we do not have an embedding for, random vectors ```np.random.rand
 ![results1](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVideoQA/images/results.jpg)
 <p align="center">Table 1. A comparison of iPerceive VideoQA with the state-of-the-art.</p>
 
-![results2]((https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVideoQA/images/abl.jpg)
+![results2](https://github.com/amanchadha/iPerceive/blob/master/iPerceiveVideoQA/images/abl.jpg)
 <p align="center">Table 2. Results from ablation studies for iPerceive DVC and common-sense reasoning to assess their impact on the performance of iPerceive VideoQA.</p>
 
 ## Pre-trained Model
