@@ -74,13 +74,15 @@ You may also download the pre-trained model [here (~2 GB)](WIP).
 If you want to skip the training procedure, you may replicate the main results of the paper using the prediction files in `./results` and the [official evaluation script](https://github.com/ranjaykrishna/densevid_eval/tree/9d4045aced3d827834a5d2da3c9f0692e3f33c1c).
 We have made some minor changes to the script to make it usable with the latest versions of the libraries available as of this writing.
 
-*Evaluating the performance with the learned proposal set up*
+**Evaluating the performance with learned proposals**
 
 Run the official evaluation script using `python3 evaluate/evaluate.py --submission ./results/results_val_learned_proposals_e30.json`. Our final result is 7.87.
 
-*Evaluating the performance on ground truth segments, run the script on each validation part (`./results/results_val_*_e30.json`) against the corresponding ground truth files (use `-r` argument in the script to specify each of them). When both values are obtained, average them to verify the final result. We got 9.9407 and 10.2478 on `val_1` and `val_2` parts, respectively, thus, the average is 10.094.
+**Evaluating the performance on ground truth segments**
 
-As we mentioned in the paper, we didn't have access to the full dataset as [ActivityNet Captions](https://cs.stanford.edu/people/ranjaykrishna/densevid/) is distributed as the list of links to YouTube video. Consequently, many videos (~8.8 %) were no longer available at the time when we were downloading the dataset. In addition, some videos didn't have any speech. We filtered out such videos from the validation files and reported the results as `no missings` in the paper. We provide these filtered ground truth files in `./data`.
+Run the script on each validation part (`./results/results_val_*_e30.json`) against the corresponding ground truth files (use `-r` argument in the script to specify each of them). When both values are obtained, average them to verify the final result. We got 9.9407 and 10.2478 on `val_1` and `val_2` parts, respectively, thus, the average is 10.094.
+
+Consequently, many videos (~8.8%) were no longer available at the time when we were downloading the dataset. In addition, some videos didn't have any speech. We filtered out such videos from the validation files and reported the results as `no missings` in the paper. We provide these filtered ground truth files in `./data`.
 
 ## Results
 
