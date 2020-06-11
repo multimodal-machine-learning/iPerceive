@@ -201,4 +201,4 @@ Yes, it is. However, to make the task of common-sense feature generation for vid
 
 Credits:
 - [Baseline common-sense reasoning implementation for images](https://github.com/Wangt-CN/VC-R-CNN) by Tan Wang.
-- The [Mask R-CNN](https://github.com/facebookresearch/maskrcnn-benchmark/) repository helped us workaround past a lot of the issues we faced with the VC R-CNN codebase.
+- The [Mask R-CNN](https://github.com/facebookresearch/maskrcnn-benchmark/) repository helped us workaround a lot of the issues we faced with the VC R-CNN codebase.
