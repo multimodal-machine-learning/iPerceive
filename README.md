@@ -25,11 +25,9 @@ The figure below outlines the goals of iPerceive VideoQA: (i) build a knowledge 
 <p align="center">Figure 3. Architectural overview of iPerceive VideoQA. Our model consists of two main components: feature fusion and frame selection. For feature fusion, we encode features using a convolutional encoder, generate common-sense vectors from the input video sequence, and use iPerceive DVC for dense captions (left). Features from all modalities (video, dense captions, QA and subtitles) are then fed to dual-layer attention: word/object and frame-level (middle). Upon fusing the attended features, we calculate frame-relevance scores (right).</p>
 
 ## Citation
-
-Please cite the work as:
-
+If you found our work interesting, please cite the work as:
 ```
-iPerceive Publication WIP
+WIP
 ```
 
 ## Usage
