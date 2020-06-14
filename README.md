@@ -174,11 +174,11 @@ Next, you need to modify the following files:
 
 **2. Extracting features of customized dataset**
 
-Recall that with the pre-trained model, we can directly extract common-sense features given raw images and bounding box coordinates. Therefore, the method to design a dataloader for your custom dataset to whats indicated above. The only difference is you may want to load bounding-box coordinates from a file for feature extraction and the labels/classes are unnecessary (however, if you do not have ground truth bounding-box coordinates coordinates, don't despair - read on below).
+Recall that with the pre-trained model, we can directly extract common-sense features given raw images and bounding box coordinates. Therefore, the method to design a dataloader for your custom dataset to whats indicated above. The only difference is you may want to load bounding-box coordinates from a file for feature extraction and the labels/classes are unnecessary (however, if you do not have ground truth bounding-box coordinates, don't despair - read on below).
 
-### Do I need to specify bounding boxes for my dataset?
+### Do I *need* to specify bounding boxes for my dataset?
 
-You don't need to! We take care of that for you. Details from the paper below:
+You don't need to! We can take care of that for you. Details from the paper below:
 **Note that since the architecture proposed in [Wang et al.](https://arxiv.org/abs/2002.12204) essentially serves as an improved visual region encoder given a region of interest (RoI) in an image, it assumes that an RoI exists and is available at test time, which reduces its effectiveness and limits its usability with new datasets that the model has never seen before. 
 We adapt their work by utilizing a pre-trained Mask R-CNN model to generate bounding boxes for RoIs for frames within each event that have been localized by the event proposal module, before feeding it to the common-sense module.**
 
