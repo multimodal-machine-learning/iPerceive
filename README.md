@@ -3,6 +3,8 @@
 Project for Stanford CS231n: CS231n: Convolutional Neural Networks for Visual Recognition
 This is the official PyTorch implementation of our paper.
 
+**[Report](https://amanchadha.com/projects/ai/cnn/Chadha_iPerceive_ProjectReport.pdf) | [Presentation](https://amanchadha.com/projects/ai/cnn/iPerceive.pdf) | [YouTube](https://www.youtube.com/watch?v=2HC0wdeQRiM) | Paper**
+
 ```Python3 | PyTorch | CNNs | Causality | Reasoning```
 
 **Explore: [iPerceive DVC](https://github.com/amanchadha/iPerceive/tree/master/iPerceiveDVC) | [iPerceive VideoQA](https://github.com/amanchadha/iPerceive/tree/master/iPerceiveVideoQA)**
