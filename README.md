@@ -12,13 +12,12 @@ This is the official PyTorch implementation of our paper.
 ## Overview
 
 Most of the previous works in visual understanding, rely solely on understanding the "what" (e.g., object recognition) and "where" (e.g., event localization), which in some cases, fails to describe correct contextual relationships between events or leads to incorrect underlying visual attention. Part of what defines us as human and fundamentally different from machines is our instinct to seek causality behind any association, say an event Y that happened as a direct result of event X. To this end, we propose iPerceive, a framework capable of understanding the "why" between events in a video by building a common-sense knowledge base using contextual cues. We demonstrate the effectiveness of our technique to the dense video captioning (DVC) and video question answering (VideoQA) tasks. Furthermore, while most prior art in DVC and VideoQA relies solely on visual information, other modalities such as audio and speech are vital for a human observer's perception of an environment. We formulate DVC and VideoQA tasks as machine translation problems that utilize multiple modalities. 
- Another common drawback of current methods is that they train the event proposal and captioning model either separately or in alternation, which prevents direct influence of the proposal based on the caption. To address this, we adopt an end-to-end Transformer architecture. % Using ablation studies, we demonstrate a considerable contribution from audio and speech components suggesting that these modalities contain substantial complementary information to video frames.  
- By evaluating the performance of iPerceive DVC and iPerceive VideoQA on the ActivityNet Captions and TVQA datasets respectively, we show that our approach furthers the state-of-the-art.
+ Another common drawback of current methods is that they train the event proposal and captioning model either separately or in alternation, which prevents direct influence of the proposal based on the caption. To address this, we adopt an end-to-end Transformer architecture. % Using ablation studies, we demonstrate a considerable contribution from audio and speech components suggesting that these modalities contain substantial complementary information to video frames. By evaluating the performance of iPerceive DVC and iPerceive VideoQA on the ActivityNet Captions and TVQA datasets respectively, we show that our approach furthers the state-of-the-art.
 
 ## Citation
 If you found our work interesting, please cite the work as:
 ```
-WIP
+Publication WIP
 ```
 
 ## Architecture
